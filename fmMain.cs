@@ -169,6 +169,27 @@ namespace dcm {
             this.tbRed.Text = color.R.ToString(CultureInfo.InvariantCulture);
             this.tbGreen.Text = color.G.ToString(CultureInfo.InvariantCulture);
             this.tbBlue.Text = color.B.ToString(CultureInfo.InvariantCulture);
+
+            int r;
+            int g;
+            int b;
+
+            int.TryParse(this.tbRed.Text, out r);
+            int.TryParse(this.tbGreen.Text, out g);
+            int.TryParse(this.tbBlue.Text, out b);
+
+            var rgb =
+                r + "," +
+                g + "," +
+                b;
+
+            var hex =
+                "#" +
+                r.ToString("X") +
+                g.ToString("X") +
+                b.ToString("X");
+
+            this.tbHex.Text = hex;
         }
 
 		/// <summary>
